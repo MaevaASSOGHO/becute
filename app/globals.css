@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  :root{
+    --be-pink: 332 78% 55%;
+    --be-ink: 0 0% 6%;
+    --be-border: 0 0% 90%;
+    --be-rose-bg: 332 50% 97%;
+    --be-rose-bg-hover: 332 55% 94%;
+    --be-rose-glow: 332 85% 70%;
+     --be-wine: 345 65% 32%;   /* bordeaux élégant */
+  --be-berry: 332 70% 40%;  /* rose foncé féminin */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
   }
+
+  html, body { height: 100%; 
+  background: hsl(var(--be-rose-bg));
+  }
+  body {
+    font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", Times, serif;
+    letter-spacing: -0.02em;
+  }
+
+  * { -webkit-tap-highlight-color: transparent; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+@layer components {
+  .soft-shadow {
+    box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 12px 30px rgba(0,0,0,.08);
+  }
+
+  /* ✅ On évite @apply vers une classe custom (lux-btn) */
+  .lux-btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-3 text-sm font-medium transition text-white;
+    background: hsl(var(--be-ink));
+  }
+  .lux-btn-primary:hover { opacity: .9; }
+
+  .lux-btn-outline {
+    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium transition border bg-white/70 hover:bg-white;
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  .badge-pink{
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium;
+    background: hsla(var(--be-pink), .12);
+    color: hsl(var(--be-ink));
+    border: 1px solid hsla(var(--be-pink), .22);
+  }
 }

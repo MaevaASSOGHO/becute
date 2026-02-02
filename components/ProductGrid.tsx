@@ -7,7 +7,7 @@ type Props = {
   limit?: number;
 };
 
-export default function ProductGridEditorial({ items, limit = 10 }: Props) {
+export default function ProductGridEditorial({ items, limit = 20 }: Props) {
   const list = items.slice(0, limit);
 
   return (
@@ -87,6 +87,10 @@ function colorToHex(name: string) {
   if (n.includes("rose")) return "#E44C76";
   if (n.includes("rouge")) return "#C50E40";
   if (n.includes("beige")) return "#E7D7C7";
+  if (n.includes("vert")) return "#4A7C59";
+  if (n.includes("bleu")) return "#3A6EA5";
+  if (n.includes("jaune")) return "#E3B23C";
+  if (n.includes("orange")) return "#ffa500";
   if (n.includes("or") || n.includes("dor")) return "#D8B26E";
   return "#DDD";
 }

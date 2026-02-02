@@ -132,7 +132,6 @@ export default function CheckoutPage() {
           </div>
         </aside>
       </div>
-        <Footer />
     </div>
   );
 }

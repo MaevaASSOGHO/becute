@@ -54,7 +54,6 @@ export default function ContactPage() {
                       href="/shop"
                       imageSrc="/hero/signature.png"
                     />
-      <Footer />
     </div>
   );
 }

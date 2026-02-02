@@ -86,7 +86,6 @@ export default function HomePage() {
         imageSrc="/hero/signature.png"
       />
 
-      <Footer />
     </div>
   );
 }

@@ -66,7 +66,6 @@ export default function ShopPage() {
         <SignatureSection href="/shop" imageSrc="/hero/signature.png" />
       </div>
       {/* on laisse le layout gérer le footer */}
-        <Footer />
     </div>
   );
 }
